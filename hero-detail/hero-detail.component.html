@@ -1,0 +1,27 @@
+
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label><br>
+    <label>surname:
+      <input [(ngModel)]="hero.surname" placeholder="surname"/>
+    </label><br>
+    <label>position:
+      <input [(ngModel)]="hero.position" placeholder="position"/>
+    </label><br>
+    <label>image:
+
+<input type="file" 
+    onchange="document.getElementById('photos').src = window.URL.createObjectURL(this.files[0])"/>
+ <img [(ngModel)]="hero.photos" id="photos" width="100">
+
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
+
+
